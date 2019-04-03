@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ViewsController extends Controller
 {
@@ -12,10 +13,22 @@ class ViewsController extends Controller
     public function actionProfile(){
         return view('profile');
     }
-    public function actionNyGists(){
+    public function actionNyGists($id=null){
+        $categories=DB::table("categories")
+            ->select('*')->get();
+        if ($id!=null){
+            $gists=DB::table("gist")->select('*')->where("cat_id",$id)->get();
+            return view('mygists',[
+                "categories"=>$categories,
+                "gists"=>$gists
+            ]);
+
+
+        }
         return view('mygists',[
-            'data'=>file_get_contents('/Users/yanahalata/Desktop/app/resources/data/gists.json'),
+        "categories"=>$categories,
         ]);
+
     }
     public function actionLogin(){
         return view('login');

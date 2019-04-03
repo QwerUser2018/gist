@@ -17,18 +17,22 @@ Route::get('/', "ViewsController@actionGistsServices");
 
 Route::get('/gistsservices', "ViewsController@actionGistsServices");
 Route::get('/profile', "ViewsController@actionProfile");
-Route::get('/mygists', "ViewsController@actionNyGists");
+Route::get('/mygists/', "ViewsController@actionNyGists");
 Route::get('/login', "ViewsController@actionLogin");
 Route::get('/registration', "ViewsController@actionRegister");
 
 
-Route::get('/category', "ApiController@actionGetCategories");
-Route::post('/category/{Categorytoken}/{CategoryName}', "ApiController@actionAddCategory");
-Route::delete('/category/{Categorytoken}', "ApiController@actionDelCategory");
+
+Route::post('/mygists', [
+    "as"=>"AddCategory",
+    "uses"=>"ApiController@actionAddCategory"
+]);
+Route::delete('/mygists/delete/{id}', "ApiController@actionDelCategory")->name("DelCategory");
 
 
-Route::get('/gist/{Categorytoken}', "ApiController@actionGetGists");
-Route::post('/gist/{id}/{name}/{text}', "ApiController@actionAddGist");
-Route::delete('/gist/{idGist}', "ApiController@actionDelGist");
-Route::put('/gist/{id}/{name}/{text}', "ApiController@actionPutGist");
+Route::get('/mygists/get/{id}', "ApiController@actionGetGists")->name("GetGists");
+Route::get('/post', "ApiController@actionGist")->name("Gist");
+Route::post('/post', "ApiController@actionAddAGist")->name("AddGist");
+Route::delete('/mygists/del/{id}', "ApiController@actionDelGist")->name("DelGist");
+Route::put('/put', "ApiController@actionPutGist")->name("PutGist");
 

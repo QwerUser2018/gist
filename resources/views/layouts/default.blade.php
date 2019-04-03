@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="public/js/main.js"></script>
+
     <title>Gists</title>
 
     <!-- Custom styles for this template -->
@@ -31,10 +31,12 @@
             </ul>
         </nav>
     </div>
+    <div class="container-fluid">
+
 
     @yield('content')
 
-
+    </div>
     <!-- Site footer -->
     <footer class="footer">
         <p>&copy; 2019 Step, Dnepr</p>
