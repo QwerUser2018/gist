@@ -147,15 +147,50 @@ body {
         position: relative;
         width: 200px;
     }
-    .del{
+.list-group-item{
+    width: 200px;
+}
+.catlist{
+    margin-bottom: 20px;
+}
+.gists{
+    background-color: #1f6fb2;
+    width: 100px;
+    height: 100px;
+}
+.del{
         position: absolute;
-        background-color: red;
+        background-color: #f5f5f5;
         width: 20px;
         height: 20px;
+        line-height: 10px;
         border-radius: 10px;
         top: 0;
         right: 0;
         text-align: center;
-        color: white;
+        color: #777;
     }
+    .fon{
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background:black;
+        opacity: 0.7;
+    }
+    .addgistform{
+        z-index: 1000;
+        margin: 0 25%;
+        top: 20%;
+        left: 0;
+        width: 760px;
+        height: 400px;
+        position: absolute;
+        padding: 20px;
+        background-color: #f5f5f5;
+        color: rgb(78,69,62);
+    }
+
 }
