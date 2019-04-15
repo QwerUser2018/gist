@@ -67,6 +67,9 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                            <a class="btn btn-link" href="/login">
+                                Login
+                            </a>
                         </div>
                     </form>
                 </div>

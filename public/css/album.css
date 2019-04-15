@@ -117,6 +117,7 @@ body {
         overflow-y: auto;
         height: 100vh;
     }
+
     .navbar-container .navbar {
         align-items: flex-start;
         justify-content: flex-start;
@@ -124,16 +125,20 @@ body {
         flex-direction: column;
         height: 100%;
     }
+
     .navbar-container .navbar-collapse {
         align-items: flex-start;
     }
+
     .navbar-container .nav {
         flex-direction: column;
         flex-wrap: nowrap;
     }
+
     .navbar-container .navbar-nav {
         flex-direction: column !important;
     }
+
     .btn-circle {
         width: 30px;
         height: 30px;
@@ -143,22 +148,27 @@ body {
         padding-right: 0;
         font-size: 13px;
     }
-    .nav-item{
+
+    .nav-item {
         position: relative;
         width: 200px;
     }
-.list-group-item{
-    width: 200px;
-}
-.catlist{
-    margin-bottom: 20px;
-}
-.gists{
-    background-color: #1f6fb2;
-    width: 100px;
-    height: 100px;
-}
-.del{
+
+    .list-group-item {
+        width: 200px;
+    }
+
+    .catlist {
+        margin-bottom: 20px;
+    }
+
+    .gists {
+        background-color: #1f6fb2;
+        width: 100px;
+        height: 100px;
+    }
+
+    .del {
         position: absolute;
         background-color: #f5f5f5;
         width: 20px;
@@ -170,27 +180,28 @@ body {
         text-align: center;
         color: #777;
     }
-    .fon{
+
+    .fon {
         position: fixed;
         z-index: 999;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        background:black;
+        background: black;
         opacity: 0.7;
     }
-    .addgistform{
+
+    .addgistform {
         z-index: 1000;
         margin: 0 25%;
         top: 20%;
         left: 0;
         width: 760px;
-        height: 400px;
+        min-height: 550px;
         position: absolute;
         padding: 20px;
         background-color: #f5f5f5;
-        color: rgb(78,69,62);
+        color: rgb(78, 69, 62);
     }
-
 }

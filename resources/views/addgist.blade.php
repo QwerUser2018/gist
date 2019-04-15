@@ -9,7 +9,7 @@
     <div class="form-group">
         <label for="formGroupExampleInput">Тема</label>
         <select class="custom-select custom-select-lg mb-3" name="categoryId">
-            <option selected >Выберите тему</option>
+            <option selected >Select category</option>
             @forelse($categories as $category)
             <option value="{{$category->id}}" >{{$category->category_name}}</option>
             @empty
@@ -17,13 +17,12 @@
             @endforelse
         </select>
 
-        <label for="formGroupExampleInput">Название поста</label>
+        <label for="formGroupExampleInput">Gist name</label>
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите название" name="gistName">
 
 
-        <label for="formGroupExampleInput">Текст поста</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Веедите текст" name="gist_text">
-
+        <label for="formGroupExampleInput">Text</label>
+        <textarea name="gist_text" id="formGroupExampleInput" placeholder="Веедите текст" cols="100" rows="10"></textarea>
     </div>
 
     <input type="submit">

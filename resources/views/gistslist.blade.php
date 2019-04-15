@@ -9,16 +9,16 @@
     </h4>
 
 
-<div class="row">
-    @forelse($gists as $gist)
 
-        <div class="col-md-4 col-lg-4 col-sm-12">
+    <div class="card-deck">
+    @forelse($gists as $gist)
+            <div class="col-md-4 col-lg-4 col-sm-12">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{$gist->gist_name}}</h4>
-                    <p class="card-text">
+                    <div class="card-text pre-scrollable">
                         {{$gist->gist_text}}
-                    </p>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <form action="{{route("DelGist",["id"=>$gist->id])}}" method="post">
@@ -26,15 +26,28 @@
                         @csrf
                         <input type="submit" value="Del" class="card-img-bottom">
                     </form>
+                        <form action="{{route("UpdateGist")}}">
+                            @csrf
+                            <input type="hidden" name="gistId" value="{{$gist->id}}">
+                            <input type="hidden" name="categoryId" value="{{$gists[0]->category["id"]}}">
+                            <input type="submit" value="Update" class="card-img-bottom">
+                        </form>
+
                 </div>
             </div>
-        </div>
+            </div>
+
+
+
 
     @empty
         <li>Добавьте категорию</li>
     @endforelse
-</div>
-</div>
+    </div>
+
+
+
+
     @endauth
 
 
